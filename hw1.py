@@ -1,6 +1,6 @@
 i = 0
 while(i<2):
-    a = input("Please enter someting:")
+    a = input("Please enter something:")
     i+=1
     print("Type {} Value {}".format(type(a),a))
 
