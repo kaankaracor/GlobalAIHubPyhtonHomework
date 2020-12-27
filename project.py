@@ -41,7 +41,7 @@ def take_courses():
     return list
 
 liste = take_courses()
-print(liste)
+
 
 def choose_lesson(x):
     a = random.choice(x)
