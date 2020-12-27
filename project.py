@@ -42,18 +42,26 @@ def take_courses():
 
 liste = take_courses()
 
-
 def choose_lesson(x):
     a = random.choice(x)
     return a
-
+print("---------------------------------------------------------------------------------------")
 lesson = choose_lesson(liste)
+print("Chosen lesson is %s"%lesson)
+
+dic_lesson = {}
+def enter_grade(x):
+    midtern = int(input("Enter your %s midtern grade:"%x))
+    final = int(input("Enter your %s final grade:"%x))
+    project = int(input("Enter your %s project grade:"%x))
+    dic_lesson = {"midterm":midtern,"final":final,"project":project}
+    return dic_lesson
 
 
-dic_lesson = {"midterm":90,"final":80,"project":100}
+dic_grade = enter_grade(lesson)
 
-def student_grade(dic_lesson):
-    note = 3/10*dic_lesson["midterm"] + 5/10*dic_lesson["final"] + 2/10*dic_lesson["project"]
+def student_grade(dic_grade):
+    note = 3/10*dic_grade["midterm"] + 5/10*dic_grade["final"] + 2/10*dic_grade["project"]
     if(note>90):
         return "AA"
     elif(note> 70 and note< 90):
@@ -65,5 +73,5 @@ def student_grade(dic_lesson):
     else:
         return "FF"
 
-grade = student_grade(dic_lesson)
+grade = student_grade(dic_grade)
 print("Kaan Karaçor got %s from %s class"%(grade,lesson))
